@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Random Number Check</title>
+  </head>
+
+  <body>
+    <button onclick="random()">Санамсаргүй тоо</button>
+
+    <h2 id="result"></h2>
+
+    <input type="text" id="check" />
+
+    <button onclick="shalgah()">Шалгах</button>
+
+    <br><br>
+
+    <button onclick="addNumber(0)">0</button>
+    <button onclick="addNumber(1)">1</button>
+    <button onclick="addNumber(2)">2</button>
+    <button onclick="addNumber(3)">3</button>
+    <button onclick="addNumber(4)">4</button>
+    <button onclick="addNumber(5)">5</button>
+    <button onclick="addNumber(6)">6</button>
+    <button onclick="addNumber(7)">7</button>
+    <button onclick="addNumber(8)">8</button>
+    <button onclick="addNumber(9)">9</button>
+
+    <script>
+      let num = 0;
+
+      function random() {
+        num = Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000;
+        document.getElementById("result").innerHTML = num;
+
+        setTimeout(function () {
+          document.getElementById("result").innerHTML = "";
+        }, 50);
+      }
+
+      function shalgah() {
+        if (Number(document.getElementById("check").value) == num) {
+          alert("Зөв байна.");
+          document.getElementById("check").value = "";
+        } else {
+          alert("Буруу тоо байна " + num);
+          document.getElementById("check").value = "";
+        }
+      }
+
+      function addNumber(n) {
+        document.getElementById("check").value += n;
+      }
+    </script>
+
+    <a href="index.html">shoo shalgah</a>
+  </body>
+</html>
+   
+
